@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+{{from datetime import datetime}}
+{{for item in items:}}
+<div class="item-box">
+    <div>
+        <img src="{{=URL('download', args=item.image)}}" class="item-image"/>
+    </div>
+    {{=LOAD('default','getDetailsViaAjax',args=[item.id],ajax=True,timeout=1000,times='infinity')}}
+</div>
+{{pass}}

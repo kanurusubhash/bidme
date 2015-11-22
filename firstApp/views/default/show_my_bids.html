@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+
+{{for item in items:}}
+<div class="item-box">
+    <div>
+        <img src="{{=URL('download', args=item.image)}}" class="item-image"/>
+    </div>
+    <div class="item-name">
+        {{=item.item_name}}
+    </div>
+    {{=LOAD('default','getDetailsViaAjax',args=[item.id],ajax=True,timeout=1000,times='infinity')}}
+
+</div>
+{{pass}}

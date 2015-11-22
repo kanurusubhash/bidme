@@ -1,0 +1,12 @@
+<div class="item-quote">
+    {{=T('Rs')}} {{=quote}}
+</div>
+<div class="time-left">
+    {{=delta}}
+</div>
+{{=item_id}}
+{{if isShowBid==1:}}
+<input type="button" value="Bid" class="btn btn-info" onclick='document.location.href="{{=URL(r=request,f='bid_for_item',args=[item_id])}}"'/>
+{{else:}}
+<input type="button" value="Expired" class="btn btn-danger disabled" />
+{{pass}}

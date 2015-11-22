@@ -1,0 +1,5 @@
+{{extend 'layout.html'}}
+<h1>
+    {{=T('Add Category')}}
+</h1>
+{{=BEAUTIFY(form)}}

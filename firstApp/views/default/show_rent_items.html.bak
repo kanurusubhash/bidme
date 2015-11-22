@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+{{from datetime import datetime}}
+{{for item in items:}}
+<div class="item-box">
+    <div>
+        <img src="{{=URL('download', args=item.image)}}" class="item-image"/>
+    </div>
+    <div>
+        Rs{{=item.min_bid_quote}}
+    </div>
+    <div class="time-left">
+        {{=item.time_of_expiry-datetime.now()}}
+    </div>
+    <input type="button" value="Rent"/>
+</div>
+{{pass}}

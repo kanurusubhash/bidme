@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+{{=BEAUTIFY(form)}}
+<h3>
+    {{=T('List of last 10 bids')}}
+</h3>
+{{if rows==None:}}
+    {{=T('No bids found.')}}
+{{else:}}
+    {{=BEAUTIFY(rows)}}
+{{pass}}
